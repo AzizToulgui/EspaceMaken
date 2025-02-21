@@ -8,7 +8,6 @@ import NewsSection from "./components/News/NewsSection"
 import BlogsCarousel from "./components/Blogs/BlogsCarousel"
 import ContactUs from "./components/Contact/ContactUs"
 import Footer from "./components/Footer/Footer"
-import ReadMore from "./components/Blogs/ReadMore"
 import ArticlePage from "./components/News/ArticlePage"
 
 function App() {
@@ -25,14 +24,13 @@ function App() {
             <AboutUs />
             <Sponser />
             <NewsSection />
-            <BlogsCarousel autoSlide={true} showButtons={false} />
+            <BlogsCarousel autoSlide={false} showButtons={true} />
             <ContactUs />
             <Footer />
           </div>
         }
       />
       <Route path="/article/:id" element={<ArticlePage/>} />
-      <Route path="/Blogs-Read-more" element={<ReadMore />} />
       
     </Routes>
   )
