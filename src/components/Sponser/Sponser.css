@@ -1,0 +1,113 @@
+
+.slider{
+    margin: 100px auto;
+    width: 85%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+.slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+}
+.slider .list .item img{
+    width: 100%;
+    filter: grayscale(1);
+}
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+}
+.slider .list .item:hover img {
+    filter: grayscale(0);
+}
+.slider[reverse="true"] .item{
+    animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 100%;
+    }
+}
+
+
+
+/* Second Version */
+
+
+/* 
+.our-clients {
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.our-clients ul {
+	padding: 0;
+	margin: 0;
+}
+
+.our-clients ul li {
+	list-style: none;
+	display: inline-block;
+	width:180px;
+	height:100px;
+	position: relative;
+	overflow: hidden;
+	cursor:pointer;
+	margin: 10px;
+	box-shadow: 0px 0px 10px -7px #555;
+	transition: .5s;
+}
+
+.our-clients ul li img {
+	width: 100%;
+	height: 100%;
+}
+.our-clients ul li img:nth-child(1) {
+	transform: translateY(0);
+	transition: .5s;
+}
+.our-clients ul li img:nth-child(2) {
+	transform: translateY(0);
+	transition: .5s;
+}
+
+/*Hover-Section*/
+
+
+/* .our-clients ul li:hover img:nth-child(1) {
+	transform: translateY(-100%);
+	transition: .5s;
+}
+.our-clients ul li:hover img:nth-child(2) {
+	transform: translateY(-100%);
+	transition: .5s;
+} */ 

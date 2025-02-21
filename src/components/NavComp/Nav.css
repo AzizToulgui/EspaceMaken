@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.navbar-container {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  transition: background-color 0.3s ease;
+
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-container.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s;
+}
+
+.navbar-items {
+  width: 95%;
+  margin: 0 auto;
+  color: white;
+}
+
+.navbar-items ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar-items ul li:first-child {
+  font-weight: bold;
+  font-size: 20px;
+  color: #0188c2;
+  margin-right: auto;
+}
+
+.navbar-items ul li:last-child {
+  margin-left: auto;
+}
+
+.hideOnMobile {
+  display: block;
+}
+
+.menu-button {
+  display: none;
+  margin-left: auto;
+  align-self: center;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #3333338f;
+  backdrop-filter: blur(5px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+}
+
+.side-bar.visible {
+  right: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-bar ul li {
+  margin: 15px 0;
+}
+
+.side-bar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.side-bar ul li a:hover {
+  text-decoration: underline;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .navbar-container.scrolled {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}

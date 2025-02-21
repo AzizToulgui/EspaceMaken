@@ -1,0 +1,10 @@
+.body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.159) , rgba(0, 0, 0, 0.575))  ,
+   url(https://i0.wp.com/lapresse.tn/wp-content/uploads/2023/10/FB_IMG_1697049883083.jpg?fit=721%2C414&ssl=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 60px; 
+}
